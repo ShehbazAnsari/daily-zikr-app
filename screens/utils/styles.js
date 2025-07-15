@@ -8,19 +8,14 @@ export const styles = StyleSheet.create({
     height: height,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#0D2F26", // dark matte green
+    backgroundColor: "#FFF2D5", // light beige green
   },
-  //   pageImage: {
-  //     width: width * 0.95,
-  //     height: height * 0.98,
-  //     borderRadius: 10,
-  //   },
+
   pageImage: {
     width: width,
     height: height,
     marginTop: -20, // reduce extra space
     marginBottom: -20,
     alignSelf: "center",
-    backgroundColor: "#0D2F26",
   },
 });

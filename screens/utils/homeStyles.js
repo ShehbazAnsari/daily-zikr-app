@@ -3,27 +3,24 @@ import { StyleSheet, Dimensions } from "react-native";
 const { width } = Dimensions.get("window");
 
 export const homeStyles = StyleSheet.create({
-  // 🟢 Main screen container
   container: {
     flex: 1,
-    backgroundColor: "#0D2F26", // Dark matte green
+    backgroundColor: "#FFF2D5", // New light background
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 20,
   },
 
-  // 🟡 Heading/title
   heading: {
     fontSize: 24,
-    color: "#FFD700", // Golden text
+    color: "#A56C43", // New bronze text color
     marginBottom: 40,
     fontWeight: "bold",
     textAlign: "center",
   },
 
-  // 🟣 Button container style
   button: {
-    backgroundColor: "#FFD700", // Golden button
+    backgroundColor: "#A56C43", // Bronze button
     paddingVertical: 15,
     paddingHorizontal: 50,
     borderRadius: 20,
@@ -32,12 +29,11 @@ export const homeStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 6,
     shadowOffset: { width: 0, height: 4 },
-    elevation: 5, // Android shadow
+    elevation: 5,
   },
 
-  // ⚪️ Button label
   buttonText: {
-    color: "#0D2F26", // Text color = background color of screen
+    color: "#FFF2D5", // Light text on dark button
     fontSize: 18,
     fontWeight: "bold",
     textAlign: "center",
