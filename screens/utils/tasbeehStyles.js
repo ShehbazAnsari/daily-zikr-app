@@ -1,5 +1,5 @@
 // utils/tasbeehStyles.js
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, Platform } from "react-native";
 
 const { width } = Dimensions.get("window");
 
@@ -45,6 +45,8 @@ export const tasbeehStyles = StyleSheet.create({
     fontWeight: "bold",
     color: "#A56C43",
     marginBottom: 16,
+    textAlign: "center",
+    alignSelf: "center",
   },
   progressBarContainer: {
     width: width * 0.8,
@@ -83,5 +85,64 @@ export const tasbeehStyles = StyleSheet.create({
     color: "#FFF2D5",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.4)",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalContent: {
+    backgroundColor: "#FFF2D5",
+    padding: 30,
+    borderRadius: 16,
+    width: "80%",
+    alignItems: "center",
+    elevation: 10,
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#A56C43",
+    marginBottom: 10,
+  },
+  modalText: {
+    fontSize: 16,
+    color: "#5E4B3C",
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  modalButton: {
+    backgroundColor: "#A56C43",
+    paddingHorizontal: 24,
+    paddingVertical: 10,
+    borderRadius: 8,
+  },
+  modalButtonText: {
+    color: "#FFF2D5",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  //picker
+  pickerWrapper: {
+    width: "100%",
+    backgroundColor: "#FFF2D5",
+    borderWidth: 2,
+    borderColor: "#A56C43",
+    borderRadius: 12,
+    paddingHorizontal: 10,
+    paddingVertical: Platform.OS === "android" ? 0 : 10,
+    marginBottom: 20,
+  },
+
+  picker: {
+    color: "#A56C43",
+    fontSize: 16,
+    width: "100%",
+  },
+
+  pickerItem: {
+    fontSize: 16,
+    color: "#A56C43",
   },
 });

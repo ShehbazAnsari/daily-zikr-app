@@ -12,6 +12,9 @@ const AnimatedCircleButton = ({ onPress }) => {
       speed: 20,
       bounciness: 10,
     }).start();
+
+    // 🔥 Instant feedback
+    onPress();
   };
 
   const handlePressOut = () => {
@@ -20,9 +23,7 @@ const AnimatedCircleButton = ({ onPress }) => {
       useNativeDriver: true,
       speed: 20,
       bounciness: 10,
-    }).start(() => {
-      onPress();
-    });
+    }).start();
   };
 
   return (

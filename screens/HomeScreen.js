@@ -47,7 +47,7 @@ const HomeScreen = () => {
       <Text style={homeStyles.heading}>📿 Surah Yaseen & Zikr Daily</Text>
       {renderButton("📖 Surah Yaseen", "SurahYaseen", 100)}
       {renderButton("📖 Surah Mulk", "SurahMulk", 200)}
-      {renderButton("📿 Tasbeeh", "Tasbeeh", 300)}{" "}
+      {renderButton("📿 Tasbeeh", "Tasbeeh", 300)}
       {/* Screen will be added later */}
     </View>
   );
