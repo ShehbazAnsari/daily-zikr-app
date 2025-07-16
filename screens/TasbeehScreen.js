@@ -18,10 +18,10 @@ const TasbeehScreen = () => {
 
   return (
     <View style={tasbeehStyles.container}>
-      <Text style={tasbeehStyles.heading}>📿 Tasbeeh</Text>
+      <Text style={tasbeehStyles.heading}>Tasbeeh 📿</Text>
 
-      <TasbeehButton label="📿 Tasbeeh-e-Fatima" screen="TasbeehFatima" />
-      <TasbeehButton label="🌙 General Zikr Counter" screen="TasbeehCounter" />
+      <TasbeehButton label="Tasbeeh-e-Fatima 📿" screen="TasbeehFatima" />
+      <TasbeehButton label="General Zikr Counter 📿" screen="TasbeehCounter" />
     </View>
   );
 };
