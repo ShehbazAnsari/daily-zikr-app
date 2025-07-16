@@ -8,8 +8,8 @@ import SurahMulkScreen from "../screens/SurahMulk";
 import TasbeehScreen from "../screens/TasbeehScreen";
 import TasbeehFatimaScreen from "../screens/TasbeehFatimaScreen";
 import TasbeehCounterScreen from "../screens/TasbeehCounterScreen";
-// import TasbeehScreen from '../screens/TasbeehScreen'; // later
-
+import ExpectingMothersScreen from "../screens/ExpectingMothersScreen";
+import SurahImageViewer from "../screens/SurahImageViewer";
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
@@ -25,6 +25,12 @@ const AppNavigator = () => {
         <Stack.Screen name="Tasbeeh" component={TasbeehScreen} />
         <Stack.Screen name="TasbeehFatima" component={TasbeehFatimaScreen} />
         <Stack.Screen name="TasbeehCounter" component={TasbeehCounterScreen} />
+        <Stack.Screen
+          name="ExpectingMothers"
+          component={ExpectingMothersScreen}
+          options={{ title: "Expecting Mothers" }} // optional title in header
+        />
+        <Stack.Screen name="SurahImageViewer" component={SurahImageViewer} />
         {/* <Stack.Screen name="Tasbeeh" component={TasbeehScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>

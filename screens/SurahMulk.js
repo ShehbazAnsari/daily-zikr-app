@@ -56,7 +56,8 @@ const SurahMulkScreen = () => {
       horizontal
       pagingEnabled
       showsHorizontalScrollIndicator={false}
-      bounces={false}
+      bounces={true}
+      bouncesZoom={true}
       inverted
     />
   );
