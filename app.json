@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "surah-yaseen-zikr-daily",
-    "slug": "surah-yaseen-zikr-daily",
+    "name": "Tasbeeh Fatima & Mothers Zikr",
+    "slug": "tasbeeh-fatima-mothers-zikr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,8 +9,8 @@
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#0D2F26"
+      "resizeMode": "contain",
+      "backgroundColor": "#FFF2D5"
     },
     "ios": {
       "supportsTablet": true
@@ -20,10 +20,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.shehbaazansari.zikrdaily"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bdf54cd4-2f05-458a-b9f5-61b2bdab6381"
+      }
     }
   }
 }

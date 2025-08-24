@@ -18,4 +18,20 @@ export const styles = StyleSheet.create({
     marginBottom: -20,
     alignSelf: "center",
   },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FFF2D5",
+    padding: 24,
+  },
+
+  loaderText: {
+    marginTop: 20,
+    fontSize: 16,
+    fontStyle: "italic",
+    textAlign: "center",
+    color: "#A56C43",
+    fontWeight: "500",
+  },
 });

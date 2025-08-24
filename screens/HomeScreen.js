@@ -34,9 +34,17 @@ const HomeScreen = () => {
         <TouchableOpacity
           onPress={() => handlePress(screen)}
           style={homeStyles.button}
-          activeOpacity={0.8}
+          activeOpacity={0.9}
         >
-          <Text style={homeStyles.buttonText}>{label}</Text>
+          <Text
+            style={homeStyles.buttonText}
+            numberOfLines={1}
+            ellipsizeMode="tail"
+            adjustsFontSizeToFit
+            minimumFontScale={0.9}
+          >
+            {label}
+          </Text>
         </TouchableOpacity>
       </Animated.View>
     );
@@ -44,7 +52,7 @@ const HomeScreen = () => {
 
   return (
     <View style={homeStyles.container}>
-      <Text style={homeStyles.heading}>Surah Yaseen & Zikr Daily</Text>
+      <Text style={homeStyles.heading}>Tasbeeh Fatima & Mothers Zikr</Text>
       {renderButton("Surah Yaseen 📖", "SurahYaseen", 100)}
       {renderButton("Surah Mulk 📖", "SurahMulk", 200)}
       {renderButton("Tasbeeh 📿", "Tasbeeh", 300)}
