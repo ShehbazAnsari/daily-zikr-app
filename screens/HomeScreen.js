@@ -53,10 +53,10 @@ const HomeScreen = () => {
   return (
     <View style={homeStyles.container}>
       <Text style={homeStyles.heading}>Tasbeeh Fatima & Mothers Zikr</Text>
-      {renderButton("Surah Yaseen 📖", "SurahYaseen", 100)}
-      {renderButton("Surah Mulk 📖", "SurahMulk", 200)}
-      {renderButton("Tasbeeh 📿", "Tasbeeh", 300)}
-      {renderButton("For Expecting Mothers 👶", "ExpectingMothers", 400)}
+      {renderButton("Surah Yaseen", "SurahYaseen", 100)}
+      {renderButton("Surah Mulk", "SurahMulk", 200)}
+      {renderButton("Tasbeeh", "Tasbeeh", 300)}
+      {renderButton("For Expecting Mothers", "ExpectingMothers", 400)}
       {/* Screen will be added later */}
     </View>
   );

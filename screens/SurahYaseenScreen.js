@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   View,
   FlatList,
@@ -64,7 +64,7 @@ const SurahYaseenScreen = () => {
       horizontal
       pagingEnabled
       showsHorizontalScrollIndicator={false}
-      bounces={false}
+      bounces={true}
       inverted
     />
   );

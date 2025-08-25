@@ -145,4 +145,12 @@ export const tasbeehStyles = StyleSheet.create({
     fontSize: 16,
     color: "#A56C43",
   },
+  progressShine: {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    width: 20,
+    borderRadius: 5,
+    backgroundColor: "rgba(255,255,255,0.6)", // subtle white gleam
+  },
 });

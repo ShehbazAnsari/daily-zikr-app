@@ -17,8 +17,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/adaptive-icon1.png",
+        "backgroundColor": "#FFF2D5"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.shehbaazansari.zikrdaily"

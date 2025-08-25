@@ -24,6 +24,48 @@ const TasbeehFatimaScreen = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.5)).current;
 
+  const progressAnim = useRef(new Animated.Value(0)).current; // 0..1
+  const [barWidth, setBarWidth] = useState(0); // px width of bar
+
+  const countScale = useRef(new Animated.Value(1)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: true,
+    }).start(() => fadeAnim.setValue(0));
+  }, [index]);
+
+  // NEW: animate progress on count change
+  useEffect(() => {
+    const limit = phrases[index].limit;
+    const pct = Math.min(1, count / limit);
+    Animated.timing(progressAnim, {
+      toValue: pct,
+      duration: 250,
+      useNativeDriver: false, // width animation requires false
+    }).start();
+  }, [count, index, progressAnim]);
+
+  // NEW: pop the count on every tap
+  useEffect(() => {
+    if (count === 0) return;
+    countScale.setValue(1);
+    Animated.sequence([
+      Animated.timing(countScale, {
+        toValue: 1.08,
+        duration: 90,
+        useNativeDriver: true,
+      }),
+      Animated.spring(countScale, {
+        toValue: 1,
+        friction: 6,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, [count, countScale]);
+
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
@@ -78,11 +120,51 @@ const TasbeehFatimaScreen = () => {
       <Animated.View style={{ opacity: fadeAnim }}>
         <Text style={tasbeehStyles.heading}>{phrases[index].text}</Text>
         <Text style={tasbeehStyles.arabicText}>{phrases[index].arabic}</Text>
-        <Text style={tasbeehStyles.count}>{count}</Text>
+        <Animated.Text
+          style={[tasbeehStyles.count, { transform: [{ scale: countScale }] }]}
+        >
+          {count}
+        </Animated.Text>
 
-        <View style={tasbeehStyles.progressBarContainer}>
-          <View
-            style={[tasbeehStyles.progressBar, { width: `${progress}%` }]}
+        <View
+          style={tasbeehStyles.progressBarContainer}
+          onLayout={(e) => setBarWidth(e.nativeEvent.layout.width)}
+        >
+          {/* Filled track (animated width) */}
+          <Animated.View
+            style={[
+              tasbeehStyles.progressBar,
+              barWidth
+                ? {
+                    width: progressAnim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [0, barWidth],
+                    }),
+                  }
+                : { width: 0 },
+            ]}
+          />
+
+          {/* Shimmer sweep (unique look) */}
+          <Animated.View
+            pointerEvents="none"
+            style={[
+              tasbeehStyles.progressShine,
+              {
+                transform: [
+                  {
+                    translateX: progressAnim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [-20, (barWidth || 0) - 10], // sweep across fill
+                    }),
+                  },
+                ],
+                opacity: progressAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0.0, 0.25],
+                }),
+              },
+            ]}
           />
         </View>
 
@@ -107,7 +189,9 @@ const TasbeehFatimaScreen = () => {
           >
             <Text style={tasbeehStyles.modalTitle}>✨ Completed</Text>
             <Text style={tasbeehStyles.modalText}>
-              You have completed Tasbeeh-e-Fatima
+              You have completed Tasbeeh-e-Fatima 🌸{"\n"}✨ A Sunnah gift from
+              Prophet ﷺ to Fatimah (RA){"\n"}
+              💎 Brings peace, barakah, and strength
             </Text>
             <TouchableOpacity
               style={tasbeehStyles.modalButton}
